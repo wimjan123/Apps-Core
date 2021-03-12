@@ -16,7 +16,7 @@
         pgrole: 'sonarr'
         intport: '8989'
         extport: '8989'
-        image: 'linuxserver/sonarr:preview'
+        image: 'linuxserver/sonarr:develop'
 
     # CORE (MANDATORY) ############################################################
     - name: 'Including cron job'
@@ -49,7 +49,7 @@
           - '{{path.stdout}}:{{path.stdout}}'
           - '/opt/appdata/{{pgrole}}:/config'
           - '/opt/appdata/{{pgrole}}/mp4_automator:/config_mp4_automator'
-          
+
     - name: 'Setting {{pgrole}} ENV'
       set_fact:
         pg_env:
